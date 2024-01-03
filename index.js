@@ -1,7 +1,8 @@
-const express = require('express');
-const cors = require('cors');
-require('dotenv').config();
-const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
+import express, { application } from 'express';
+import cors from 'cors';
+import dotenv from 'dotenv';
+
+dotenv.config();
 const app = express();
 const port = process.env.PORT || 5000;
 
@@ -187,8 +188,8 @@ run().catch(console.dir);
 
 // basic code
 
-app.get('/', (req, res) => {
-    res.send(`C a f e      T e r r a c e      S e r v e r`)
+app.get('/', (req, res)=>{
+    res.send("Hello World!")
 })
 
-app.listen(port, () => console.log(`Server running on ${port}`))
+app.listen(port, ()=> console.log(`Server running on ${port}`))
