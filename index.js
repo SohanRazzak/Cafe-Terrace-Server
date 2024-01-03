@@ -1,6 +1,7 @@
-import express, { application } from 'express';
+import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import { MongoClient, ObjectId, ServerApiVersion } from 'mongodb';
 
 dotenv.config();
 const app = express();
@@ -189,7 +190,7 @@ run().catch(console.dir);
 // basic code
 
 app.get('/', (req, res)=>{
-    res.send("Hello World!")
+    res.send(`Cafe     Terrace     Server     Is     Running`)
 })
 
 app.listen(port, ()=> console.log(`Server running on ${port}`))
